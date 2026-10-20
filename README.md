@@ -2,6 +2,9 @@
 
 A small, static geography learning page. Each date selects a different country from `countries.json`; the selection is deterministic, so everyone sees the same country on the same date. The current temporary rotation has 195 entries, so it repeats each country's fact after 195 days. The page does not save progress or require an account.
 
+https://taishicoding.github.io/LearningGlobe/
+
+
 ## Start with one click
 
 Python 3 is required. On Windows, double-click `launch-learningworld.bat`. It starts the local server and opens the page in your browser. To stop it, double-click `stop-learningworld.bat`.
