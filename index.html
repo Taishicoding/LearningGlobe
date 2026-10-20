@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F7F5F0" />
+    <meta name="description" content="Today's geography discovery." />
+    <title>LearningWorld — Today's little discovery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.15.0/dist/maplibre-gl.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="LearningWorld home">
+        <svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="19" fill="#AFC8D8" stroke="#43635C" stroke-width="1.5" />
+          <path d="M11 16c4-3 6-3 9 0l-1 5-5 2-3 5m19-13 4 3-2 5-5 1-2 8M18 11q6 6 5 13t-5 11m12-24q-4 6-3 12t5 12" fill="#A9BFA8" stroke="#6D8978" stroke-width="1.1" stroke-linejoin="round" />
+          <circle cx="20" cy="24" r="1.2" fill="#43635C" /><circle cx="27" cy="24" r="1.2" fill="#43635C" />
+          <path d="M21 28q3 3 6 0" fill="none" stroke="#43635C" stroke-width="1.2" stroke-linecap="round" />
+        </svg>
+        <span>LearningWorld</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#today">Today's country</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">Today's little<br /><em>discovery</em></h1>
+          <a class="hero-link" href="#today">See today's place <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art">
+          <svg class="hero-illustration" viewBox="0 0 650 390" role="img" aria-labelledby="globe-title globe-description">
+            <title id="globe-title">A little globe ready for a journey</title>
+            <desc id="globe-description">A smiling blue globe with hand-drawn continents, soft clouds, a map pin and tiny stars.</desc>
+            <path class="sky-curve" d="M42 286c46-87 111-137 191-149 85-13 171 16 263 98 49 44 78 81 109 126H42z" />
+            <path class="hill-back" d="M39 317c58-58 117-71 179-43 69 31 113 34 171 5 73-37 143-21 221 48v34H39z" />
+            <path class="hill-front" d="M38 344c64-39 124-44 191-14 69 31 133 19 192-7 62-27 126-17 190 21v21H38z" />
+            <g class="cloud cloud-left"><path d="M80 159c-15 0-25-9-25-21 0-11 10-20 22-20 4-14 16-23 31-23 16 0 28 11 30 25 13 1 23 9 23 20s-9 19-22 19z" /></g>
+            <g class="cloud cloud-right"><path d="M464 91c-13 0-22-8-22-18s8-17 19-18c4-12 14-20 27-20 14 0 24 9 27 22 11 1 20 8 20 18 0 9-8 16-19 16z" /></g>
+            <path class="orbit" d="M118 277c-11-106 40-191 130-213 102-25 226 32 278 122 32 55 28 111-4 147" />
+            <circle class="globe-shadow" cx="328" cy="220" r="137" />
+            <circle class="globe" cx="322" cy="207" r="132" />
+            <circle class="globe-inner" cx="322" cy="207" r="124" />
+            <g class="continents" stroke-linejoin="round">
+              <path d="m225 121 18-17 28-7 21 11 5 15-13 12-8 22-19 8-9 23-17-4-7-18-20-13 6-20z" />
+              <path d="m271 197 20-12 20 9 12 18-7 20 10 19-8 26-14 29-16-12-2-24-15-18 3-22-12-20z" />
+              <path d="m337 108 21-12 24 7 10 13 22 7 19 17-8 15-22-2-11 14-19-4-8-17-23-3-12-16z" />
+              <path d="m400 204 24-12 25 8 11 18-11 20-19 4-8 21-20-7-7-20-14-12z" />
+              <path d="m205 240-15 13-8 22 14 13 17-4 8-15-4-22z" />
+            </g>
+            <circle class="cheek" cx="300" cy="215" r="6" /><circle class="cheek" cx="345" cy="215" r="6" />
+            <circle class="eye" cx="312" cy="203" r="3" /><circle class="eye" cx="334" cy="203" r="3" />
+            <path class="smile" d="M315 216q8 9 16 0" />
+            <g class="pin"><path d="M449 145c0-22 16-38 36-38s36 16 36 38c0 25-36 62-36 62s-36-37-36-62z"/><circle cx="485" cy="144" r="13"/><circle class="pin-eye" cx="481" cy="143" r="1.5"/><circle class="pin-eye" cx="489" cy="143" r="1.5"/><path class="pin-smile" d="M482 148q3 3 6 0"/></g>
+            <path class="star star-one" d="m170 111 4 11 11 4-11 4-4 11-4-11-11-4 11-4z" />
+            <path class="star star-two" d="m535 233 3 8 8 3-8 3-3 8-3-8-8-3 8-3z" />
+            <path class="flight-path" d="M103 241q17-17 34 0t34 0" />
+            <path class="bird" d="m129 228q7-8 14 0 7-8 14 0" />
+          </svg>
+        </div>
+      </section>
+
+      <section class="today-section" id="today" aria-labelledby="country-name">
+        <div class="country-layout">
+          <article class="country-copy">
+            <time class="country-date" id="country-date"></time>
+            <div class="country-heading">
+              <img class="country-flag" id="country-flag" width="48" height="32" alt="" aria-hidden="true" />
+              <span class="country-flag-emoji" id="country-flag-emoji" aria-hidden="true" hidden></span>
+              <h2 id="country-name">Loading…</h2>
+            </div>
+            <p class="location" id="location-summary"></p>
+            <div class="fact-card">
+              <svg class="fact-doodle" viewBox="0 0 70 70" aria-hidden="true"><path d="M35 7v56M7 35h56M15 15l40 40M55 15 15 55"/><circle cx="35" cy="35" r="21"/><circle cx="35" cy="35" r="4" fill="currentColor"/><path d="M35 7 31 18l4-2 4 2zM63 35 52 31l2 4-2 4zM35 63l4-11-4 2-4-2zM7 35l11 4-2-4 2-4z" fill="currentColor"/></svg>
+              <p class="fact-text" id="fact-text"></p>
+              <span class="fact-star" aria-hidden="true">✦</span>
+            </div>
+            <dl class="country-details">
+              <div><dt>Key cities</dt><dd id="key-cities"></dd></div>
+              <div><dt>Member of</dt><dd id="memberships"></dd></div>
+            </dl>
+            <p class="source-line" id="sources"></p>
+          </article>
+          <div class="map-wrap">
+            <span class="map-stamp" aria-hidden="true">✿</span>
+            <div class="map-panel" id="globe" role="region" aria-label="Interactive globe focused near today's country">
+              <div id="map-error" class="map-error" role="status" hidden>The globe could not load. Check the browser console for details.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home">
+        <svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="19"/><path d="M11 16c4-3 6-3 9 0l-1 5-5 2-3 5m19-13 4 3-2 5-5 1-2 8M18 11q6 6 5 13t-5 11m12-24q-4 6-3 12t5 12"/><circle cx="20" cy="24" r="1.2"/><circle cx="27" cy="24" r="1.2"/><path d="M21 28q3 3 6 0"/></svg>
+        <span>LearningWorld</span>
+      </a>
+      <a class="back-top" href="#home">Back to top ↑</a>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
